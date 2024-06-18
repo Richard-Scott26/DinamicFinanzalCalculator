@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: min(100% - 15px, 230px);
+    height: min(100% - 15px, 230px);
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    border: solid 2px #000;
+    overflow: hidden;
+    background-color: white;
+}
+
+img{
+    width: 170px;
+    height: 170px;
+    padding: 10px;
+}
+
+.titleContainer{
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-weight: 600;
+    font-size: 18px;
+    padding-bottom: 10px;
+    text-align: center;
+}

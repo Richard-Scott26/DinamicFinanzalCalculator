@@ -1,0 +1,36 @@
+<div>
+  <form [formGroup]="formuser">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12" *ngFor="let item of items">
+          <!---->
+          <ion-input
+          [label]="item.label" 
+          label-placement="floating"
+          placeholder="Ingrese el valor"
+          class="inputs number"
+          [formControlName]="item.formControlName"
+          ></ion-input>          
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+  <ion-grid fixed>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="6">
+        <button class="btn" (click)="Calcular()">Calcular</button>
+      </ion-col>
+      <ion-col size="6">
+        <button class="btn" (click)="Reiniciar()">Reiniciar</button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="12">
+        <div class="ta">
+          <ion-label class="lblresult ion-padding" position="stacked">Arrendameinto Financiero: </ion-label>
+          <ion-textarea class="ion-padding" [(ngModel)]="results" readonly></ion-textarea>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

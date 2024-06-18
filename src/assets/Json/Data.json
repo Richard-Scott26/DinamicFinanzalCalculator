@@ -1,0 +1,584 @@
+{
+    "units": [
+        {
+            "title": "Acciones",
+            "img": "../../assets/Images/FEL.avif",
+            "subtitles": [
+                {
+                    "title": "Comunes",
+                    "img": "../../assets/Images/Acciones1.jpg",
+                    "topics": [
+                        {
+                            "title": "Crecimiento 0",
+                            "img": "../../assets/Images/CategoryActions.jpg",
+                            "Informacion": [
+                                {
+                                    "title": "Que son las acciones",
+                                    "contenido": "Las acciones son documentos que emiten las compañías debidamente constituidas, éstas se manejan en la bolsa a modo de compra y venta; también son llamados títulos que le confieren derechos económicos y políticos a quien los posee respecto de una compañía."
+                                },
+                                {
+                                    "title": "Ejemplo",
+                                    "contenido": "Por ejemplo, en una empresa donde existen distintos socios, cada uno debe tener un porcentaje de acciones que le hacen dueño de la parte proporcional que representan dichos títulos."
+                                },
+                                {
+                                    "title": "Modelo de crecimiento cero",
+                                    "contenido": "El método más sencillo para la valuación de dividendos es el modelo de crecimiento cero, el cual supone un flujo constante de dividendos no crecientes. En términos de la notación ya presentada, D1 = D2 = ... = Dn Cuando dejamos que D1 represente el monto del dividendo anual, bajo crecimiento cero se reduce a D1/Ks. La ecuación indica que con el crecimiento cero, el valor de una acción sería igual al valor presente de una perpetuidad de D1 dólares, descontada a una tasa ks. En pocas palabras, el modelo de crecimiento 0 es un procedimiento para la valuacion de dividendos que supone una corriente de dividendos constantes y sin crecimiento."
+                                }
+                            ],
+                            "Inputs": [
+                                {
+                                    "label": "Dividendo esperado",
+                                    "formControlName": "Dt"
+                                },
+                                {
+                                    "label": "Rendimiento requerido (%)",
+                                    "formControlName": "Ks"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Crecimiento constante",
+                            "img": "../../assets/Images/AccionesCrecimientoConstante.avif",
+                            "Informacion": [
+                                {
+                                    "title": "Que son las acciones",
+                                    "contenido": "Las acciones son documentos que emiten las compañías debidamente constituidas, éstas se manejan en la bolsa a modo de compra y venta; también son llamados títulos que le confieren derechos económicos y políticos a quien los posee respecto de una compañía."
+                                },
+                                {
+                                    "title": "Ejemplo",
+                                    "contenido": "Por ejemplo, en una empresa donde existen distintos socios, cada uno debe tener un porcentaje de acciones que le hacen dueño de la parte proporcional que representan dichos títulos."
+                                },
+                                {
+                                    "title": "Modelo de crecimiento constante",
+                                    "contenido": "Es un procedimiento para la valuación de dividendos, citado con mucha frecuencia, que supone que los dividendos crecerán a una tasa constante (g) menor que el rendimiento requerido (ks) o (ke), tambien es conocido como el modelo de Gordon"
+                                }
+                            ],
+                            "Inputs": [
+                                {
+                                    "label": "Dividendo esperado",
+                                    "formControlName": "Dt"
+                                },
+                                {
+                                    "label": "Rendimiento requerido (%)",
+                                    "formControlName": "Ks"
+                                },
+                                {
+                                    "label": "Tasa crecimiento constante (%)",
+                                    "formControlName": "g"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Crecimiento variable",
+                            "img": "../../assets/Images/CrecimientoVariable.avif",
+                            "Informacion": [
+                                {
+                                    "title": "Que son las acciones",
+                                    "contenido": "Las acciones son documentos que emiten las compañías debidamente constituidas, éstas se manejan en la bolsa a modo de compra y venta; también son llamados títulos que le confieren derechos económicos y políticos a quien los posee respecto de una compañía."
+                                },
+                                {
+                                    "title": "Ejemplo",
+                                    "contenido": "Por ejemplo, en una empresa donde existen distintos socios, cada uno debe tener un porcentaje de acciones que le hacen dueño de la parte proporcional que representan dichos títulos."
+                                },
+                                {
+                                    "title": "Modelo de crecimiento variable",
+                                    "contenido": "En el contexto de finanzas y valoración de acciones, el modelo de crecimiento variable se aplica a menudo a través del Modelo de Gordon, también conocido como el Modelo de Descuento de Dividendos. Este modelo valora una acción común considerando los dividendos futuros esperados y asumiendo un crecimiento variable en esos dividendos. En el contexto de crecimiento variable, se pueden extender las proyecciones para múltiples períodos.\nEste enfoque considera que las tasas de crecimiento de los dividendos no son constantes y cambian con el tiempo, reflejando así la idea de crecimiento variable en la valoración de acciones comunes."
+                                }
+                            ],
+                            "Inputs": [
+                                {
+                                    "label": "Dividendo esperado",
+                                    "formControlName": "Dt"
+                                },
+                                {
+                                    "label": "Rendimiento requerido (%)",
+                                    "formControlName": "Ks"
+                                },
+                                {
+                                    "label": "Tasa de crecimiento inicial (%)",
+                                    "formControlName": "g"
+                                },
+                                {
+                                    "label": "Tasa de crecimiento despues del cambio (%)",
+                                    "formControlName": "g2"
+                                },
+                                {
+                                    "label": "Plazo (anios)",
+                                    "formControlName": "N"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "FEL",
+                            "img": "../../assets/Images/FlujoFEL.avif",
+                            "Informacion": [
+                                {
+                                    "title": "Flujo de efectivo libre (FEL)",
+                                    "contenido": "El Flujo de Efectivo Libre (FEL) es una medida financiera fundamental que representa la cantidad de efectivo disponible para los inversionistas y acreedores después de cubrir todos los gastos operativos y de capital. Es un indicador clave de la capacidad de una empresa para generar efectivo a partir de sus operaciones y financiar inversiones futuras o recompensar a los accionistas mediante dividendos o recompras de acciones."
+                                },
+                                {
+                                    "title": "",
+                                    "contenido": "Este método es atractivo cuando se analizan empresas que no tienen un antecedente de dividendos, cuando se trata de empresas recién creadas, o bien, cuando se valúa una unidad operativa o una división de una empresa de participación pública muy grande. Aunque los modelos de valuación de dividendos se usan y aceptan en gran medida, en estas situaciones es preferible utilizar el modelo más general de valuación de flujo de efectivo libre."
+                                },
+                                {
+                                    "title": "",
+                                    "contenido": "El modelo de valuación del flujo de efectivo libre se sustenta en la misma premisa básica de los modelos de valuación de dividendos: el valor de una acción común es el valor presente de todos los flujos de efectivo futuros que se espera que esta proporcione durante un tiempo infinito. Sin embargo, en el modelo de valuación de flujo de efectivo libre, en vez de valuar los dividendos esperados de la empresa, se valúan los flujos de efectivo libre esperados de la empresa, Estos representan el monto del flujo de efectivo disponible para los inversionistas –los proveedores de deuda (acreedores) y de capital patrimonial (dueños)– después de haber pagado todas las demás obligaciones. El modelo de valuación del flujo de efectivo libre calcula el valor de toda la empresa determinando el valor presente de sus flujos de efectivo libre esperados, descontados a su costo de capital promedio ponderado, que es el costo futuro promedio esperado de los fondos"
+                                }
+                            ],
+                            "Inputs": [
+                                {
+                                    "label": "tasa de crecimiento del FEL (%)",
+                                    "formControlName": "g"
+                                },
+                                {
+                                    "label": "costo de capital promedio ponderado (%)",
+                                    "formControlName": "Ka"
+                                },
+                                {
+                                    "label": "Valor de mercado de deuda",
+                                    "formControlName": "VD"
+                                },
+                                {
+                                    "label": "Valor de mercado de acciones preferentes",
+                                    "formControlName": "VP"
+                                },
+                                {
+                                    "label": "Numero de acciones comunes en circulacion",
+                                    "formControlName": "AC"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Preferentes",
+                    "img": "../../assets/Images/AccionesPreferentes.avif",
+                    "topics": [
+                        {
+                            "title": "Preferentes",
+                            "img": "../../assets/Images/Preferentes.avif",
+                            "Informacion": [
+                                {
+                                    "title": "Que son las acciones",
+                                    "contenido": "Las acciones son documentos que emiten las compañías debidamente constituidas, éstas se manejan en la bolsa a modo de compra y venta; también son llamados títulos que le confieren derechos económicos y políticos a quien los posee respecto de una compañía."
+                                },
+                                {
+                                    "title": "Acciones preferentes",
+                                    "contenido": "Representan una participación en el capital de una empresa, y que por lo general no otorga derechos significativos de voto.\nLos accionistas preferentes comparten la propiedad de la empresa con los accionistas comunes."
+                                },
+                                {
+                                    "title": "",
+                                    "contenido": "Las ganancias que queden después de pagar dividendos a los accionistas preferentes (generalmente un monto fijo) corresponden a los accionistas comunes."
+                                }
+                            ],
+                            "Inputs": [
+                                {
+                                    "label": "Dividendo establecido",
+                                    "formControlName": "DE"
+                                },
+                                {
+                                    "label": "Rendimiento requerido (%)",
+                                    "formControlName": "Ks"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Apalancamiento",
+            "img": "../../assets/Images/ApalancamientoFinanciero.avif",
+            "subtitles":[
+                {
+                    "title": "Apalancamiento Financiero",
+                    "img": "../../assets/Images/CategoryAppeceament.jpg",
+                    "topics":[
+                        {
+                            "title": "Apalancamiento Financiero",
+                            "img": "../../assets/Images/CategoryAppeceaments.jpg",
+                            "Informacion": [
+                                {
+                                    "title": "Apalancamiento",
+                                    "contenido": "El apalancamiento consiste en utilizar algún mecanismo (como deuda) para aumentar la cantidad de dinero que podemos destinar a una inversión. Es la relación entre capital propio y el realmente utilizado en una operación financiera."
+                                },
+                                {
+                                    "title": "",
+                                    "contenido": "El término «apalancamiento» viene de apalancar. Una definición rigurosa de apalancar es: «levantar, mover algo con la ayuda de una palanca». Como vamos a ver, este concepto no está muy lejos de lo que significa el apalancamiento financiero, que utiliza mecanismos financieros a modo de palanca para aumentar las posibilidades de inversión. \n\nEl principal mecanismo para apalancarse es la deuda. La deuda permite que invirtamos más dinero del que tenemos gracias a lo que hemos pedido prestado. A cambio, como es lógico, debemos pagar unos intereses. Pero no solo mediante deuda se puede conseguir apalancamiento financiero."
+                                },
+                                {
+                                    "title": "Apalancamiento financiero (GAF)",
+                                    "contenido": "El apalancamiento financiero se debe a la presencia de los costos financieros fijos que la empresa debe pagar. podemos definir el apalancamiento financiero como el uso de los costos financieros fijos para acrecentar los efectos de los cambios en las utilidades antes de intereses e impuestos sobre las ganancias por acción de la empresa. Los dos costos financieros fijos más comunes son: <strong>1. los intereses de deuda</strong> y <strong>2. los dividendos de acciones preferentes.</strong> Estos costos deben pagarse sin importar el monto de las UAII disponibles para pagarlos"
+                                }
+                            ],
+                            "Inputs": [
+                                {
+                                    "label": "Utilidad antes de intereses y impuestos (UAII)",
+                                    "formControlName": "UAII"
+                                },
+                                {
+                                    "label": "Impuestos",
+                                    "formControlName": "I"
+                                },
+                                {
+                                    "label": "Dividendos de acciones preferentes",
+                                    "formControlName": "DP"
+                                },
+                                {
+                                    "label": "Tasa impositiva (%)",
+                                    "formControlName": "T"
+                                }
+                            ] 
+                        }
+                    ]
+                },
+                {
+                    "title": "Apalancamiento Operativo",
+                    "img": "../../assets/Images/Appeceament1.jpg",
+                    "topics":[
+                        {
+                            "title": "Apalancamiento Operativo",
+                            "img": "../../assets/Images/ApalancamientoOperativo.avif",
+                            "Informacion": [
+                                {
+                                    "title": "Apalancamiento",
+                                    "contenido": "El apalancamiento consiste en utilizar algún mecanismo (como deuda) para aumentar la cantidad de dinero que podemos destinar a una inversión. Es la relación entre capital propio y el realmente utilizado en una operación financiera."
+                                },
+                                {
+                                    "title": "",
+                                    "contenido": "El término «apalancamiento» viene de apalancar. Una definición rigurosa de apalancar es: «levantar, mover algo con la ayuda de una palanca». Como vamos a ver, este concepto no está muy lejos de lo que significa el apalancamiento financiero, que utiliza mecanismos financieros a modo de palanca para aumentar las posibilidades de inversión. \n\nEl principal mecanismo para apalancarse es la deuda. La deuda permite que invirtamos más dinero del que tenemos gracias a lo que hemos pedido prestado. A cambio, como es lógico, debemos pagar unos intereses. Pero no solo mediante deuda se puede conseguir apalancamiento financiero."
+                                },
+                                {
+                                    "title": "Apalancamiento operativo (GAO)",
+                                    "contenido": "El apalancamiento operativo se debe a la existencia de costos fijos que la compañía debe pagar para operar. podemos definir el apalancamiento operativo como el uso de los costos operativos fijos para acrecentar los efectos de los cambios en las ventas sobre las utilidades antes de intereses e impuestos de la compañía."
+                                }
+                            ],
+                            "Inputs": [
+                                {
+                                    "label": "Precio de venta por unidad",
+                                    "formControlName": "P"
+                                },
+                                {
+                                    "label": "Cantidad de ventas en unidades",
+                                    "formControlName": "Q"
+                                },
+                                {
+                                    "label": "Costo operativo fijo por periodo",
+                                    "formControlName": "CF"
+                                },
+                                {
+                                    "label": "Costo operativo variable por unidad",
+                                    "formControlName": "CV"
+                                }
+                            ] 
+                        }
+                    ]
+                },
+                {
+                    "title": "Apalancamiento Total",
+                    "img": "../../assets/Images/Appeceament1.jpg",
+                    "topics":[
+                        {
+                            "title": "Apalancamiento Total",
+                            "img": "../../assets/Images/ApalancamientoOperativo.avif",
+                            "Informacion": [
+                                {
+                                    "title": "Apalancamiento",
+                                    "contenido": "El apalancamiento consiste en utilizar algún mecanismo (como deuda) para aumentar la cantidad de dinero que podemos destinar a una inversión. Es la relación entre capital propio y el realmente utilizado en una operación financiera."
+                                },
+                                {
+                                    "title": "",
+                                    "contenido": "El término «apalancamiento» viene de apalancar. Una definición rigurosa de apalancar es: «levantar, mover algo con la ayuda de una palanca». Como vamos a ver, este concepto no está muy lejos de lo que significa el apalancamiento financiero, que utiliza mecanismos financieros a modo de palanca para aumentar las posibilidades de inversión. \n\nEl principal mecanismo para apalancarse es la deuda. La deuda permite que invirtamos más dinero del que tenemos gracias a lo que hemos pedido prestado. A cambio, como es lógico, debemos pagar unos intereses. Pero no solo mediante deuda se puede conseguir apalancamiento financiero."
+                                },
+                                {
+                                    "title": "Apalancamiento Total (GAT)",
+                                    "contenido": "El grado de apalancamiento total (GAT) es la medida numérica del apalancamiento total de la empresa. Se calcula de manera similar que el apalancamiento operativo y financiero."
+                                }
+                            ],
+                            "Inputs": [
+                                {
+                                    "label": "Grado de apalancamiento operativo",
+                                    "formControlName": "GAO"
+                                },
+                                {
+                                    "label": "Grado de apalancamiento financiero",
+                                    "formControlName": "GAF"
+                                }
+                            ] 
+                        }
+                    ]
+                }
+                
+            ]
+        },
+        {
+            "title": "Arrendamiento",
+            "img": "../../assets/Images/Leasing1.jpg",
+            "subtitles": [
+                {
+                    "title": "Arrendamiento financiero",
+                    "img": "../../assets/Images/CategoryLeasing.jpg",
+                    "topics":[
+                        {
+                            "title": "Arrendamiento financiero",
+                            "img": "../../assets/Images/ArrendamientoFinanciero.avif",
+                            "Informacion": [
+                                {
+                                    "title": "Arrendamiento",
+                                    "contenido": "El arrendamiento financiero es una figura legal por medio de cual dos personas (físicas o morales) se comprometen de manera recíproca y voluntaria a: Arrendador, quien es el que arrienda y el Arrendatario, quien paga un precio periodico por concepto de uso de opcion de compra"
+                                },
+                                {
+                                    "title": "",
+                                    "contenido": "Se trata de una opción recurrente entre las empresas que buscan crecer y que también es habitual entre los emprendedores que no cuentan con la capacidad para adquirir los bienes necesarios para sus negocios. Entre los bienes que suelen arrendarse destacan automóviles para servicios, equipo especializado y oficinas, en un proceso también conocido como leasing."
+                                },
+                                {
+                                    "title": "",
+                                    "contenido": "La opción de compra al final del periodo determinado en el contrato de arrendamientos es la diferencia entre un arrendamiento puro y un arrendamiento financiero. Para estos casos se fija un monto a pagar sobre el valor del bien al que se suma una tasa de interés: la diferencia entre el total de los pagos y el valor original de bien arrendado. Estos contratos tienen una duración mínima de un año. El arrendatario es quien figura como propietario del bien para efectos fiscales, lo que le permite deducir su inversión. Si no se ejerce la opción de adquirir el bien, éste deberá ser devuelto al arrendador, sólo con excepción de que el contrato estipule lo contrario."
+                                }
+                            ],
+                            "Inputs": [
+                                {
+                                    "label": "Valor del activo",
+                                    "formControlName": "VA"
+                                },
+                                {
+                                    "label": "Tasa de interes anual (%)",
+                                    "formControlName": "T"
+                                },
+                                {
+                                    "label": "Plazo (anios)",
+                                    "formControlName": "n"
+                                },
+                                {
+                                    "label": "Pagos de arrendamiento mensual",
+                                    "formControlName": "R"
+                                }
+                            ] 
+                        }
+                    ]
+                },
+                {
+                    "title": "Arrendamiento operativo",
+                    "img": "../../assets/Images/ArrendamientoOperativo.avif",
+                    "topics":[
+                        {
+                            "title": "Arrendamiento operativo",
+                            "img": "../../assets/Images/ArrendamientoOperativo2.avif",
+                            "Informacion": [
+                                {
+                                    "title": "Arrendamiento",
+                                    "contenido": "El arrendamiento financiero es una figura legal por medio de cual dos personas (físicas o morales) se comprometen de manera recíproca y voluntaria a: Arrendador, quien es el que arrienda y el Arrendatario, quien paga un precio periodico por concepto de uso de opcion de compra"
+                                },
+                                {
+                                    "title": "",
+                                    "contenido": "Se trata de una opción recurrente entre las empresas que buscan crecer y que también es habitual entre los emprendedores que no cuentan con la capacidad para adquirir los bienes necesarios para sus negocios. Entre los bienes que suelen arrendarse destacan automóviles para servicios, equipo especializado y oficinas, en un proceso también conocido como leasing."
+                                },
+                                {
+                                    "title": "Arrendamiento operativo",
+                                    "contenido": "El arrendamiento operativo es una acuerdo donde se cede el derecho de uso de un activo del propietario a otra persona. Ello, a cambio de un pago periódico. Dicho convenio se lleva a cabo por un plazo determinado y se asemeja mucho al alquiler común. Se utiliza principalmente para artículos tecnológicos como ordenadores y otros equipos de oficina que se deprecian en el mediano plazo, por ejemplo, cinco años."
+                                }
+                            ],
+                            "Inputs": [
+                                {
+                                    "label": "Plazo (anios)",
+                                    "formControlName": "n"
+                                },
+                                {
+                                    "label": "Pagos de arrendamiento mensual",
+                                    "formControlName": "R"
+                                },
+                                {
+                                    "label": "Costos de mantenimiento anual",
+                                    "formControlName": "ma"
+                                },
+                                {
+                                    "label": "Costo de seguro anual",
+                                    "formControlName": "csa"
+                                }
+                            ] 
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Bonos",
+            "img": "../../assets/Images/Bonds1.jpg",
+            "subtitles": [
+                {
+                    "title": "Comunes",
+                    "img": "../../assets/Images/Bonds2.jpg",
+                    "topics":[
+                        {
+                            "title": "Comunes",
+                            "img": "../../assets/Images/AccionesComunes.avif",
+                            "Informacion": [
+                                {
+                                    "title": "Bonos",
+                                    "contenido": "Un bono es un instrumento financiero de deuda que emite una empresa pública o privada para financiarse y que promete devolver el capital más sus intereses en un plazo determinado. Es decir, un bono es un préstamo, del cual forma parte un emisor y un receptor. En este instrumento, que es de renta fija, el emisor se compromete a:\nDevolver el capital que recibió a través del bono en una fecha determinada\nPagar periódicamente los intereses establecidos hasta el vencimiento del bono.\nCumplir con toda obligación especificada en el bono.\nPero… ¿por qué las empresas o gobiernos emiten bonos? Las empresas o gobiernos, tanto nacionales como provinciales o municipales, emiten bonos para financiar proyectos de inversión o incluso para afrontar otros compromisos de deuda. Es decir, materializan la deuda entregando a sus prestamistas un activo financiero. La organización emisora divide el total de la deuda que quiere colocar en pequeñas porciones, es decir, en bonos. Esta división se hace ya que como los préstamos son tan grandes, no se los puede conceder a un solo inversor, por lo que dividen el préstamo en muchos pequeños contratos o títulos. Luego de su emisión, los bonos pueden ser comprados y vendidos en el mercado de valores, por lo que el inversor puede no mantener el bono hasta su vencimiento."
+                                },
+                                {
+                                    "title": "Los bonos tienen tres partes específicas: ",
+                                    "contenido": "* El principal, que es el monto que se indica en el bono, es decir, su valor nominal, el cual generalmente se encuentra denominado en múltiplos de 100 o 1000,\n* El cupón, que representa la tasa de interés del bono.\n\n* Y el plazo, que es el período de vigencia del bono.\n\nEl bono es un activo de renta fija debido a que, independientemente de cómo le vaya a la empresa, el inversor va a recibir a final del período el interés fijo al cual se ha comprometido la empresa emisora. Esta es la principal diferencia con las acciones (instrumento de renta variable), ya que en estas no se conoce con certeza cuál será el rendimiento de la inversión y tienen un alto nivel de riesgo y alta volatilidad; mientras que los bonos, al ser de renta fija, la renta de inversión, la cual prácticamente no tiene variaciones y su riesgo es bajo, se conoce con anticipación. Los bonos son inversiones recomendadas para objetivos a corto o mediano plazo, y para inversores que no quieran correr un alto riesgo que pueda representar pérdidas importantes, ya que como la persona va a necesitar el dinero en el corto plazo, si la pérdida sucede, el bonista no va a poder planificar otra estrategia para recuperar su dinero."
+                                },
+                                {
+                                    "title": "Para poder invertir en bonos, la persona debe:",
+                                    "contenido": "* Abrir una cuenta comitente para operar.\n*Contar con un agente de negociación y/o liquidación registrada ante la Comisión Nacional de Valores, quien actuará como nuestro intermediario.\n\n* Informarse sobre las entidades que ofrecen buenas tasas de retorno para convertirte en dueño de bonos.\nEl agente de negociación, también conocido como bróker, está autorizado a comprar y vender acciones y bonos en el mercado, por lo que el inversor debe decirle qué y cuánto comprar o vender y él lo realizará a cambio de una comisión. A partir de la apertura de la cuenta comitente, el inversionista podrá comenzar a enviarle las órdenes de compra y venta al agente de negociación, quien ejecutará las órdenes de sus clientes en alguno de los sistemas habilitados para la negociación."
+                                },
+                                {
+                                    "title": "Las ventajas de invertir en bonos son las siguientes:",
+                                    "contenido": "* Rentabilidad, la cual se puede generar tanto por la compra-venta como por el cobro de los intereses.\n* Liquidez, debido a que es fácil y rápido entrar y salir del mercado.\n* Diversificación, ya que diversificar/pluralizar disminuye el riesgo del portfolio de inversiones.\n* Seguridad, debido a que los bonos permiten proteger los ahorros ante la volatilidad del tipo de cambio, inflación y tasas.\n* Flujo de fondos, porque los bonos tienen esquemas de pago preestablecidos.\n* Y lámina mínima, es decir, bajos montos necesarios para adquirirlos.\nEs importante tener en cuenta que antes de invertir, hay que conocer todas las posibilidades, asesorarse con profesionales del área y observar las propias finanzas para, si es a través de la inversión en bonos, tener una ganancia en corto y mediano plazo."
+                                }
+                                
+                            ],
+                            "Inputs": [
+                                {
+                                    "label": "Valor Nominal",
+                                    "formControlName": "VN"
+                                },
+                                {
+                                    "label": "Cupon (%)",
+                                    "formControlName": "C"
+                                },
+                                {
+                                    "label": "TIR (%)",
+                                    "formControlName": "TIR"
+                                },
+                                {
+                                    "label": "Plazo (anios)",
+                                    "formControlName": "N"
+                                }
+                            ] 
+                        }
+                    ]
+                },
+                {
+                    "title": "RAV",
+                    "img": "../../assets/Images/BonosRAV.avif",
+                    "topics":[
+                        {
+                            "title": "Rav",
+                            "img": "../../assets/Images/Rav.avif",
+                            "Informacion": [
+                                {
+                                    "title": "RAV",
+                                    "contenido": "Cuando los inversionistas evalúan los bonos, comúnmente consideran el rendimiento al vencimiento (RAV). Esta es la tasa anual de interés compuesto ganada sobre valores de deuda comprados en un día específico, y conservados hasta su vencimiento. (Desde  luego, la medida supone que el emisor realiza todos los pagos programados de principal e intereses según lo prometido).5 El rendimiento al vencimiento de un bono con un precio actual que iguala su valor a la par (es decir, B0 = M) siempre será igual a la tasa cupón. Cuando el valor del bono difiere del valor a la par, el rendimiento al vencimiento diferirá de la tasa cupón."
+                                },
+                                {
+                                    "title": "",
+                                    "contenido": "Si suponemos que el interés se paga anualmente, el rendimiento al vencimiento de un bono se obtiene resolviendo la ecuación para determinar kd. En otras palabras, se conocen el valor presente, el interés anual, el valor a la par y los años al vencimiento, pero se debe calcular el rendimiento requerido. El rendimiento requerido es el rendimiento del bono a su vencimiento. El RAV se determina usando una calculadora financiera, una hoja de cálculo de Excel o por ensayo y error. La calculadora proporciona valores exactos del RAV con poco esfuerzo."
+                                }
+                            ],
+                            "Inputs": [
+                                {
+                                    "label": "Valor de venta del bono",
+                                    "formControlName": "VB"
+                                },
+                                {
+                                    "label": "Valor a la par",
+                                    "formControlName": "F"
+                                },
+                                {
+                                    "label": "Cupon (%)",
+                                    "formControlName": "C"
+                                },
+                                {
+                                    "label": "Plazo",
+                                    "formControlName": "n"
+                                },
+                                {
+                                    "label": "Pagos por anio",
+                                    "formControlName": "t"
+                                }
+                            ] 
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Razones financieras",
+            "img": "../../assets/Images/CategoryFinancialReasons.jpg",
+            "subtitles": [
+                {
+                    "title": "",
+                    "img": "",
+                    "topics": [
+                        {
+                            "title": "Razones de liquidez",
+                            "img": "",
+                            "Informacion": [
+                                {
+                                    "title": "Concepto",
+                                    "contenido": "El crecimiento 0 lo que sea mi chak"
+                                },
+                                {
+                                    "title": "Concepto",
+                                    "contenido": "El crecimiento 0 lo que sea mi chak"
+                                },
+                                {
+                                    "title": "Concepto",
+                                    "contenido": "El crecimiento 0 lo que sea mi chak"
+                                }
+                            ],
+                            "Inputs": [
+                                {
+                                    "label": "Valor Nominal",
+                                    "formControlName": "VN"
+                                },
+                                {
+                                    "label": "Cupon (%)",
+                                    "formControlName": "C"
+                                },
+                                {
+                                    "label": "TIR (%)",
+                                    "formControlName": "TIR"
+                                },
+                                {
+                                    "label": "Plazo (anios)",
+                                    "formControlName": "N"
+                                }
+                            ] 
+                        },
+                        {
+                            "title": "Indice de actividad",
+                            "img": "",
+                            "Informacion": [
+                                {
+                                    "title": "Concepto",
+                                    "contenido": "El crecimiento 0 lo que sea mi chak"
+                                },
+                                {
+                                    "title": "Concepto",
+                                    "contenido": "El crecimiento 0 lo que sea mi chak"
+                                },
+                                {
+                                    "title": "Concepto",
+                                    "contenido": "El crecimiento 0 lo que sea mi chak"
+                                }
+                            ],
+                            "Inputs": [
+                                {
+                                    "label": "Valor Nominal",
+                                    "formControlName": "VN"
+                                },
+                                {
+                                    "label": "Cupon (%)",
+                                    "formControlName": "C"
+                                },
+                                {
+                                    "label": "TIR (%)",
+                                    "formControlName": "TIR"
+                                },
+                                {
+                                    "label": "Plazo (anios)",
+                                    "formControlName": "N"
+                                }
+                            ] 
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+<ion-header [translucent]="false">
+  <ion-toolbar>
+    <ion-title><strong>Calcfin</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+<ion-grid fixed>
+  <ion-row class="ion-justify-content-start ion-align-items-center">
+    <ion-col size="6" *ngFor="let item of units">
+      <app-card
+      [title]="item.title"
+      [url_img]="item.img"
+      (click)="onClick(item)"
+      ></app-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+</ion-content>

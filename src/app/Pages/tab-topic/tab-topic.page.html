@@ -1,0 +1,106 @@
+<app-header 
+[titlePage]="receivedData.title"
+return="home"
+></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-segment [(ngModel)]="segmentModel" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="info">Info</ion-segment-button>
+    <ion-segment-button value="calc">Calc</ion-segment-button>
+  </ion-segment>
+
+  <!-- Contenido dinámico según el segmento seleccionado -->
+  <div class="container" *ngIf="segmentModel === 'info'">
+    <app-information [items]="this.informations"></app-information>
+  </div>
+  <div class="container" *ngIf="segmentModel === 'calc'">
+    <!-- Utiliza [ngSwitch] para cargar dinámicamente el componente según el valor de outputTemplate -->
+    <ng-container [ngSwitch]="outputTemplate">
+      <ng-container *ngSwitchCase="'Crecimiento0'">
+        <ng-container *ngTemplateOutlet="Crecimiento0"></ng-container>
+      </ng-container>
+      <ng-container *ngSwitchCase="'CrecimientoConstante'">
+        <ng-container *ngTemplateOutlet="CrecimientoConstante"></ng-container>
+      </ng-container>
+      <ng-container *ngSwitchCase="'CrecimientoVariable'">
+        <ng-container *ngTemplateOutlet="CrecimientoVariable"></ng-container>
+      </ng-container>
+      <ng-container *ngSwitchCase="'FEL'">
+        <ng-container *ngTemplateOutlet="FEL"></ng-container>
+      </ng-container>
+      <ng-container *ngSwitchCase="'Preferentes'">
+        <ng-container *ngTemplateOutlet="Preferentes"></ng-container>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="'ApalancamientoFinanciero'">
+        <ng-container *ngTemplateOutlet="ApalancamientoFinanciero"></ng-container>
+      </ng-container>
+      <ng-container *ngSwitchCase="'ApalancamientoOperativo'">
+        <ng-container *ngTemplateOutlet="ApalancamientoOperativo"></ng-container>
+      </ng-container>
+      <ng-container *ngSwitchCase="'ApalancamientoTotal'">
+        <ng-container *ngTemplateOutlet="ApalancamientoTotal"></ng-container>
+      </ng-container>
+
+
+      <ng-container *ngSwitchCase="'ArrendamientoFinanciero'">
+        <ng-container *ngTemplateOutlet="ArrendamientoFinanciero"></ng-container>
+      </ng-container>
+      <ng-container *ngSwitchCase="'ArrendamientoOperativo'">
+        <ng-container *ngTemplateOutlet="ArrendamientoOperativo"></ng-container>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="'Comunes'">
+        <ng-container *ngTemplateOutlet="Comunes"></ng-container>
+      </ng-container>
+      <ng-container *ngSwitchCase="'RAV'">
+        <ng-container *ngTemplateOutlet="RAV"></ng-container>
+      </ng-container>
+      
+      <ng-container *ngSwitchDefault>
+        <p>Hubo un error, no se encontro componente</p>
+      </ng-container>
+    </ng-container>
+  </div>
+
+  <ng-template #Crecimiento0>
+    <app-calc-crecimiento0 [items]="inputs"></app-calc-crecimiento0>
+  </ng-template>
+  <ng-template #CrecimientoConstante>
+    <app-calc-crecimiento-constante [items]="inputs"></app-calc-crecimiento-constante>
+  </ng-template>
+  <ng-template #CrecimientoVariable>
+    <app-calc-crecimiento-variable [items]="inputs"></app-calc-crecimiento-variable>
+  </ng-template>
+  <ng-template #FEL>
+    <app-calc-fel [items]="inputs"></app-calc-fel>
+  </ng-template>
+  <ng-template #Preferentes>
+    <app-calc-preferentes [items]="inputs"></app-calc-preferentes>
+  </ng-template>
+
+  <ng-template #ApalancamientoFinanciero>
+    <app-calc-apalancamiento-financiero [items]="inputs"></app-calc-apalancamiento-financiero>
+  </ng-template>
+  <ng-template #ApalancamientoOperativo>
+    <app-calc-apalancamiento-operativo [items]="inputs"></app-calc-apalancamiento-operativo>
+  </ng-template>
+  <ng-template #ApalancamientoTotal>
+    <app-calc-apalancamiento-total [items]="inputs"></app-calc-apalancamiento-total>
+  </ng-template>
+
+  <ng-template #ArrendamientoFinanciero>
+    <app-calc-arrendamiento-financiero [items]="inputs"></app-calc-arrendamiento-financiero>
+  </ng-template>
+  <ng-template #ArrendamientoOperativo>
+    <app-calc-arrendamiento-operativo [items]="inputs"></app-calc-arrendamiento-operativo>
+  </ng-template>
+
+  <ng-template #Comunes>
+    <app-calc-comunes [items]="inputs"></app-calc-comunes>
+  </ng-template>
+  <ng-template #RAV>
+    <app-calc-rav [items]="inputs"></app-calc-rav>
+  </ng-template>
+
+</ion-content>

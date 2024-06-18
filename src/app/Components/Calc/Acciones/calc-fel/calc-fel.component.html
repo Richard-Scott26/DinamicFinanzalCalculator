@@ -1,0 +1,130 @@
+<div>
+  <form [formGroup]="formuser">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12" *ngFor="let item of items">
+          <!---->
+          <ion-input
+          [label]="item.label" 
+          label-placement="floating"
+          placeholder="Ingrese el valor"
+          class="inputs number"
+          [formControlName]="item.formControlName"
+          ></ion-input>          
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4.5">
+          <ion-input
+          label="Anio inicio"
+          label-placement="floating"
+          placeholder="Ingrese el valor"
+          class="inputs number"
+          formControlName="inicio"
+          ></ion-input>
+        </ion-col>
+        <ion-col size="4.5">
+          <ion-input
+          label="plazo"
+          label-placement="floating"
+          placeholder="Ingrese el valor"
+          class="inputs number"
+          formControlName="plazo"
+          ></ion-input>
+        </ion-col>
+        <ion-col size="2">
+          <button class="btn" (click)="Cargar()">Cargar</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+  <form *ngIf="array !== []" [formGroup]="formuser">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6" *ngFor="let item of array">
+          <ion-input
+          [label]="item" 
+          label-placement="floating"
+          placeholder="Ingrese el valor"
+          class="inputs number"
+          [formControlName]="item"
+          ></ion-input>  
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+  <ion-grid fixed>
+    <ion-row class="ion-justify-content-end ion-align-items-end">
+      <ion-col size="3">
+        <button class="btn" (click)="Calcular()">Calcular</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ng-container id="containerYearsFel" *ngIf="datos">
+        <ion-grid fixed>
+          <ion-row class="ion-justify-content-center ion-align-items-center">
+            <ion-col size="8">
+              <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="year">
+                  <th mat-header-cell *matHeaderCellDef>Anio</th>
+                  <td mat-cell *matCellDef="let element">{{element.year}}</td>
+                </ng-container>
+                <ng-container matColumnDef="value">
+                  <th mat-header-cell *matHeaderCellDef>FEL</th>
+                  <td mat-cell *matCellDef="let element">{{element.value}}</td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ng-container>
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ng-container id="containerDataFel" *ngIf="datos2">
+        <ion-grid fixed>
+          <ion-row class="ion-justify-content-center ion-align-items-center">
+            <ion-col size="12">
+              <table mat-table [dataSource]="dataSource2" class="mat-elevation-z8">
+                <ng-container matColumnDef="year">
+                  <th mat-header-cell *matHeaderCellDef>Anio</th>
+                  <td mat-cell *matCellDef="let element">{{element.year}}</td>
+                </ng-container>
+                <ng-container matColumnDef="fel">
+                  <th mat-header-cell *matHeaderCellDef>FEL</th>
+                  <td mat-cell *matCellDef="let element">{{element.fel}}</td>
+                </ng-container>
+                <ng-container matColumnDef="paso2">
+                  <th mat-header-cell *matHeaderCellDef>[1 + Ka]</th>
+                  <td mat-cell *matCellDef="let element">{{element.paso2}}</td>
+                </ng-container>
+                <ng-container matColumnDef="VPFelt">
+                  <th mat-header-cell *matHeaderCellDef>fel / [1 + Ka]</th>
+                  <td mat-cell *matCellDef="let element">{{element.VPFelt}}</td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+              </table>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ng-container>
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="12">
+        <div class="ta">
+          <ion-label class="lblresult ion-padding" position="stacked">Valor actual de las acciones comunes: </ion-label>
+          <ion-textarea class="ion-padding" [(ngModel)]="results" readonly></ion-textarea>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        <button class="btn" (click)="Reiniciar()">Reiniciar</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
